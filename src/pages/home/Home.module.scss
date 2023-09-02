@@ -1,0 +1,54 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.content {
+    flex: 1;
+    padding: 2em;
+    z-index: 1;
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    .info {
+        background-color: #ecf0f1;
+        padding: 1em;
+        border-radius: 5px;
+        color: #333;
+
+        div {
+            margin-bottom: 1em;
+        }
+    }
+
+   
+
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    background-color: #f9f9f9;
+    max-width: 400px;
+    .searchIcon {
+        color: #888;
+        margin-right: 8px;
+    }
+
+    .searchInput {
+        border: none;
+        background-color: transparent;
+        outline: none;
+        flex-grow: 1;
+        font-size: 16px;
+     
+    }
+
+    .searchInput::placeholder {
+        color: #aaa;
+    }
+}

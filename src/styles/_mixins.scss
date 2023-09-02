@@ -1,0 +1,9 @@
+@mixin transition($args) {
+  transition: $args;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

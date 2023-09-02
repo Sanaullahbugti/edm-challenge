@@ -1,0 +1,194 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.container {
+  @include flex-center;
+  height: 100vh;
+  background-color: $background-color;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+  .sideCard {
+    flex: 1;
+    background-color: $primary-gradient;
+    padding: 2em;
+    color: white;
+    background-image: $primary-gradient;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+
+    h1,
+    h2,
+    p {
+      margin: 0 0 1em 0; 
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column; 
+
+    .sideCard {
+      display: none;
+    }
+
+    .form {
+      width: 100%;
+    }
+  }
+
+
+  .logo span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: rocketAnimation 1s ease-in-out forwards;
+  }
+
+  .logo h1 {
+    transform: translateX(-100%); 
+    animation: edmAnimation 1s ease-in-out forwards;
+  }
+
+  .logo {
+    @include flex-center;
+    flex-direction: column;
+    font-size: 3em;
+  }
+
+  @keyframes rocketAnimation {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes edmAnimation {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .form {
+    flex: 2;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 1em;
+  }
+
+  .input {
+    padding: 1em;
+    font-size: $font-size;
+    font-family: $base-font;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    @include transition(all 0.3s);
+    box-shadow: 0 0 8px rgba($primary-color, 0.2);
+
+    &::placeholder {
+      color: lighten($text-color, 30%);
+    }
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+      box-shadow: 0 0 8px rgba($primary-color, 0.2);
+    }
+  }
+
+  .button {
+    background-color: $primary-gradient;
+    color: white;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background-image: $primary-gradient;
+    font-size: $font-size;
+    font-family: $base-font;
+    @include transition(all 0.3s);
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .error {
+    color: $error-color;
+    font-size: 0.875em;
+    text-align: center;
+  }
+
+
+  
+
+
+}
+@media (max-width: 767px) {
+  .login {
+      width: 90%; 
+      padding: 1em; 
+      height: 50vh !important; 
+
+      .sideCard {
+          display: none; 
+      }
+
+      .form {
+          flex: 1; 
+          width: 80%;
+      }
+
+      .logo {
+          font-size: 2em; 
+      }
+
+      .input {
+          padding: 1em;
+          margin: 0 0 1em 0; 
+          font-size: 0.9em; 
+          box-sizing: border-box; 
+      }
+
+      .button {
+          font-size: 0.9em;
+      }
+
+      .error {
+          font-size: 0.8em; 
+      }
+  }
+}

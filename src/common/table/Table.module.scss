@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.table-container {
+    overflow-x: auto; 
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+    thead tr:first-child {
+        color: #f6f6f6;
+        background-image: $primary-gradient;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        user-select: none;
+        cursor: pointer;
+
+        svg {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    td {
+        background-color: #f6f6f6;
+
+        .actionIcon {
+            margin-right: 10px; 
+            cursor: pointer; 
+            transition: color 0.2s;
+
+            &:hover {
+                opacity: 0.7; 
+            }
+        }
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    @media (max-width: 768px) { 
+        th, td {
+            padding: 8px 10px;
+        }
+
+        font-size: 0.8rem;
+        
+        .actionIcon {
+            margin-right: 5px;
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #45a049;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    }
+}

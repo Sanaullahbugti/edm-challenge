@@ -1,0 +1,129 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+    position: relative;
+
+    .hamburger {
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        z-index: 10;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .sidebar {
+        width: 250px;
+        background-image: $primary-gradient;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+        transition: transform 0.3s ease;
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 2em;
+        }
+        .menu {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 10px; 
+        
+            .menuItem {
+                display: flex;
+                justify-content: center; 
+                gap: 20px;
+                padding: 15px 25px; 
+                cursor: not-allowed;
+                opacity: 0.9; 
+                transition: 0.3s;
+                border-radius: 7px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+                min-width: 150px;
+                &:hover {
+                    opacity: 1; 
+                    background-color: rgba(255, 255, 255, 0.05); 
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
+                }
+        
+                .icon {
+                    font-size: 1.3em; 
+                }
+        
+                .label {
+                    font-size: 1.1em; 
+                }
+            }
+        }
+        
+
+        .logout {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    .content {
+        flex: 1;
+        padding: 2em;
+        z-index: 1;
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .info {
+            background-color: #ecf0f1;
+            padding: 1em;
+            border-radius: 5px;
+            color: #333;
+
+            div {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hamburger {
+            display: block;
+        }
+
+        .sidebar {
+            transform: translateX(-260px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+    }
+}
