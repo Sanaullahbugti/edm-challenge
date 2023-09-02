@@ -14,7 +14,7 @@ The project showcases a frontend implementation with an emphasis on user authent
 
 1. First, clone the repository: 
     ```bash
-    https://github.com/Sanaullahbugti/edm-challenge.git
+   git clone https://github.com/Sanaullahbugti/edm-challenge.git
     ```
 
 2. Change your directory to the cloned repository's main folder:
